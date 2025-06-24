@@ -1,0 +1,5 @@
+# _config.yml
+title: Ernesto Reyes
+description: Personal site for creative work and freelance services
+markdown: kramdown
+theme: null
