@@ -4,5 +4,12 @@ title: Blog
 permalink: /blog/
 ---
 
-<h2>Updates & Writings</h2>
-<p>This is where I’ll post thoughts, behind-the-scenes notes, and occasional essays or voiceover work logs. Check back soon for new content.</p>
+<h2>Blog Posts</h2>
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a><br>
+      <small>{{ post.date | date: "%B %d, %Y" }}</small>
+    </li>
+  {% endfor %}
+</ul>
