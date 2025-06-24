@@ -13,4 +13,4 @@ permalink: /hire/
   <li>🎨 Visual Storytelling (layout, structure, design consulting)</li>
 </ul>
 
-<p>For inquiries, collaborations, or to discuss your project, contact me at: <strong>ernestoreyes [@] ernestoreyes.com</strong></p>
+<p>For inquiries, collaborations, or to discuss your project, contact me at: <strong>ernesto [@] ernestoreyes.com</strong></p>
