@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ernesto Reyes — IT Support for Small Businesses</title>
+  <meta name="description" content="32+ years of hands-on IT experience helping small businesses in Los Angeles stay running. Network setup, databases, QuickBooks, troubleshooting and more."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:   #0d1b2a;
+      --navy2:  #152338;
+      --amber:  #e8a020;
+      --amber2: #f5b94a;
+      --cream:  #f5f0e8;
+      --muted:  #8a9ab0;
+      --white:  #ffffff;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--navy);
+      color: var(--cream);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.2rem 2.5rem;
+      background: rgba(13,27,42,0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(232,160,32,0.15);
+    }
+    .nav-logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.2rem;
+      color: var(--amber);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--amber); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex; align-items: center;
+      padding: 8rem 2.5rem 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 75% 50%, rgba(232,160,32,0.07) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 60% at 10% 80%, rgba(21,35,56,0.8) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      align-items: center;
+      position: relative;
+    }
+    .hero-eyebrow {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 1.2rem;
+      display: flex; align-items: center; gap: 0.75rem;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: block; width: 2rem; height: 1px;
+      background: var(--amber);
+    }
+    h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.8rem, 5vw, 4.2rem);
+      line-height: 1.1;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+    }
+    h1 em {
+      font-style: italic;
+      color: var(--amber);
+    }
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 480px;
+      margin-bottom: 2.5rem;
+      font-weight: 300;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.9rem 2rem;
+      background: var(--amber);
+      color: var(--navy);
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      border-radius: 3px;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn:hover { background: var(--amber2); transform: translateY(-1px); }
+    .btn-ghost {
+      background: transparent;
+      color: var(--cream);
+      border: 1px solid rgba(245,240,232,0.25);
+      margin-left: 1rem;
+    }
+    .btn-ghost:hover { border-color: var(--amber); color: var(--amber); background: transparent; transform: translateY(-1px); }
+
+    /* Stats panel */
+    .hero-stats {
+      background: var(--navy2);
+      border: 1px solid rgba(232,160,32,0.15);
+      border-radius: 8px;
+      padding: 2.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    .stat-item {}
+    .stat-num {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.8rem;
+      color: var(--amber);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .stat-divider {
+      grid-column: 1 / -1;
+      height: 1px;
+      background: rgba(232,160,32,0.12);
+    }
+
+    /* ── SECTION BASE ── */
+    section { padding: 6rem 2.5rem; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 1rem;
+    }
+    h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+    }
+
+    /* ── SERVICES ── */
+    #services { background: var(--navy2); }
+    .services-intro {
+      max-width: 600px;
+      color: var(--muted);
+      margin-bottom: 3.5rem;
+      font-size: 1.05rem;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .service-card {
+      background: var(--navy);
+      border: 1px solid rgba(232,160,32,0.12);
+      border-radius: 6px;
+      padding: 2rem;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .service-card:hover {
+      border-color: var(--amber);
+      transform: translateY(-3px);
+    }
+    .service-icon {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+    .service-card h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.2rem;
+      color: var(--white);
+      margin-bottom: 0.6rem;
+    }
+    .service-card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ── ABOUT ── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+    .about-text p {
+      color: var(--muted);
+      margin-bottom: 1.2rem;
+      font-size: 1rem;
+    }
+    .about-text p strong { color: var(--cream); }
+    .skills-list {
+      display: flex; flex-wrap: wrap; gap: 0.6rem;
+      margin-top: 1.5rem;
+    }
+    .skill-tag {
+      background: rgba(232,160,32,0.1);
+      border: 1px solid rgba(232,160,32,0.25);
+      color: var(--amber2);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      padding: 0.35rem 0.8rem;
+      border-radius: 100px;
+    }
+    .timeline { margin-top: 0; }
+    .timeline-item {
+      padding-left: 1.5rem;
+      border-left: 1px solid rgba(232,160,32,0.2);
+      margin-bottom: 2rem;
+      position: relative;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute; left: -4px; top: 6px;
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--amber);
+    }
+    .timeline-role {
+      font-weight: 600;
+      color: var(--white);
+      font-size: 0.95rem;
+    }
+    .timeline-company { color: var(--amber); font-size: 0.85rem; margin-bottom: 0.2rem; }
+    .timeline-years { color: var(--muted); font-size: 0.8rem; margin-bottom: 0.5rem; }
+    .timeline-desc { color: var(--muted); font-size: 0.88rem; }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--navy2); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 5rem;
+      align-items: start;
+    }
+    .contact-blurb {
+      color: var(--muted);
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+    .contact-detail {
+      display: flex; align-items: center; gap: 0.75rem;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .contact-detail a { color: var(--cream); text-decoration: none; }
+    .contact-detail a:hover { color: var(--amber); }
+    .contact-detail span:first-child { color: var(--amber); font-size: 1rem; }
+
+    /* Form */
+    form { display: flex; flex-direction: column; gap: 1.2rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+    label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+    input, select, textarea {
+      width: 100%;
+      background: var(--navy);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--cream);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      padding: 0.8rem 1rem;
+      border-radius: 4px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--amber);
+    }
+    select option { background: var(--navy); }
+    textarea { resize: vertical; min-height: 120px; }
+    .form-submit {
+      display: flex; align-items: center; gap: 1rem; margin-top: 0.5rem;
+    }
+    .btn-submit {
+      padding: 0.9rem 2.2rem;
+      background: var(--amber);
+      color: var(--navy);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-submit:hover { background: var(--amber2); transform: translateY(-1px); }
+    .form-note { font-size: 0.78rem; color: var(--muted); }
+    .success-msg {
+      display: none;
+      background: rgba(232,160,32,0.1);
+      border: 1px solid rgba(232,160,32,0.3);
+      color: var(--amber2);
+      padding: 1rem 1.2rem;
+      border-radius: 4px;
+      font-size: 0.9rem;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 2rem 2.5rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: var(--amber); }
+
+    /* ── GOOGLE FORM ── */
+    .gform-wrap {
+      background: var(--navy);
+      border: 1px solid rgba(232,160,32,0.15);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    /* ── ANIMATIONS ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { gap: 1.2rem; }
+      .hero { padding: 7rem 1.5rem 4rem; }
+      .hero-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .form-row { grid-template-columns: 1fr; }
+      section { padding: 4rem 1.5rem; }
+      footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Ernesto Reyes</a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-grid">
+    <div>
+      <div class="hero-eyebrow">IT Support · Los Angeles, CA</div>
+      <h1>Your business,<br><em>always running.</em></h1>
+      <p class="hero-sub">
+        32 years keeping small manufacturing and service businesses on their feet — networks, databases, software, phones. No jargon, no nonsense.
+      </p>
+      <a href="#contact" class="btn">Get in Touch</a>
+      <a href="#services" class="btn btn-ghost">See What I Do</a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">32+</div>
+        <div class="stat-label">Years in IT</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">2</div>
+        <div class="stat-label">Companies Built from Ground Up</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-num">50+</div>
+        <div class="stat-label">Users Supported</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">LA</div>
+        <div class="stat-label">Based · Available Locally</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-inner">
+    <div class="section-label">What I Do</div>
+    <h2>The IT problems small<br>businesses actually have</h2>
+    <p class="services-intro">
+      I'm not a help desk ticket. I'm the person who shows up, figures it out, and fixes it — the same way I did for two companies over three decades.
+    </p>
+    <div class="services-grid">
+      <div class="service-card fade-up">
+        <div class="service-icon">🌐</div>
+        <h3>Network Setup & Maintenance</h3>
+        <p>Routers, switches, access points, VPNs, and remote access. Built and maintained multi-building networks across 50+ users.</p>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-icon">🗄️</div>
+        <h3>Database & Access Solutions</h3>
+        <p>MS Access, SQL, MySQL, MariaDB. I can build, fix, convert, or modernize your data systems — including legacy databases nobody else will touch.</p>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-icon">💼</div>
+        <h3>QuickBooks & Accounting Software</h3>
+        <p>Setup, backups, report design, training, and troubleshooting. Peachtree/Sage too. I've handled it all, including quarterly inventory valuations.</p>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-icon">☎️</div>
+        <h3>Phone & Communications Systems</h3>
+        <p>VoIP, PBX, Vonage Business, Yealink hardware. Setting up or migrating your business phone system without the headaches.</p>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-icon">🖥️</div>
+        <h3>Workstations & General IT Support</h3>
+        <p>Windows environments, Active Directory, printers, desktops, laptops, and everything in between. The stuff that just needs to work.</p>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-icon">🔧</div>
+        <h3>Google Workspace & Microsoft 365</h3>
+        <p>Migration, setup, user management, and training. I've moved companies from Exchange to Google and kept both environments running in parallel.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-text">
+        <div class="section-label">About Me</div>
+        <h2>The guy who figures it out</h2>
+        <p>I started my career as a <strong>clerk manually updating ledgers by hand</strong>. I discovered Lotus 123, taught myself, and converted the whole system to spreadsheets. Then to dBase. Then to a full networked database that's still running today — over 30 years later.</p>
+        <p>That's been my whole career: <strong>find the problem, learn what I need to learn, and fix it.</strong> I've covered IT, production scheduling, purchasing, and accounting functions — not because it was my job, but because the company needed it done.</p>
+        <p>I work best with <strong>small businesses</strong> because I understand the reality: you can't afford a five-person IT department, you need one reliable person who knows your systems and picks up the phone.</p>
+        <p>Los Angeles based. Available for on-site or remote support.</p>
+        <div class="skills-list">
+          <span class="skill-tag">MS Access</span>
+          <span class="skill-tag">SQL / MySQL</span>
+          <span class="skill-tag">Windows Server</span>
+          <span class="skill-tag">Active Directory</span>
+          <span class="skill-tag">Networking</span>
+          <span class="skill-tag">VoIP / PBX</span>
+          <span class="skill-tag">QuickBooks</span>
+          <span class="skill-tag">Google Workspace</span>
+          <span class="skill-tag">Microsoft 365</span>
+          <span class="skill-tag">ERP Systems</span>
+          <span class="skill-tag">WordPress</span>
+          <span class="skill-tag">VBA</span>
+          <span class="skill-tag">Linux / Ubuntu</span>
+          <span class="skill-tag">Python (learning)</span>
+        </div>
+      </div>
+
+      <div class="timeline">
+        <div class="section-label" style="margin-bottom:1.5rem;">Experience</div>
+
+        <div class="timeline-item fade-up">
+          <div class="timeline-role">IT Manager</div>
+          <div class="timeline-company">Spectratek Technologies — Santa Fe Springs, CA</div>
+          <div class="timeline-years">January 2000 – May 2021 · 21 years</div>
+          <div class="timeline-desc">Sole IT resource for a multi-building manufacturing company. Built and maintained the entire infrastructure — network, servers, ERP, databases, phones, and more.</div>
+        </div>
+
+        <div class="timeline-item fade-up">
+          <div class="timeline-role">Systems Administrator</div>
+          <div class="timeline-company">Continental Forge — Compton, CA</div>
+          <div class="timeline-years">July 1989 – January 2000 · 10 years</div>
+          <div class="timeline-desc">Grew from clerk to systems admin. Built the company's first network, order entry database, exchange server, and website from scratch.</div>
+        </div>
+
+        <div class="timeline-item fade-up">
+          <div class="timeline-role">Onsite Technician</div>
+          <div class="timeline-company">Hemmersbach Onsite Service</div>
+          <div class="timeline-years">May 2023 – August 2023</div>
+          <div class="timeline-desc">Field hardware support in high-volume production environments. Ticket management, diagnosis, repair, and equipment disposition.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div>
+        <div class="section-label">Get In Touch</div>
+        <h2>Let's talk about what you need</h2>
+        <p class="contact-blurb">
+          Tell me what's going on with your setup. If it's something I can help with, I'll tell you straight — and if it's not, I'll tell you that too.
+        </p>
+        <div class="contact-detail">
+          <span>📧</span>
+          <span><a href="/cdn-cgi/l/email-protection#3154435f5442455e7154435f5442455e43544854421f525e5c"><span class="__cf_email__" data-cfemail="c4a1b6aaa1b7b0ab84a1b6aaa1b7b0abb6a1bda1b7eaa7aba9">[email&#160;protected]</span></a></span>
+        </div>
+        <div class="contact-detail">
+          <span>📞</span>
+          <span><a href="tel:5624453505">562-445-3505</a></span>
+        </div>
+        <div class="contact-detail">
+          <span>📍</span>
+          <span>Los Angeles, CA — On-site & Remote</span>
+        </div>
+      </div>
+
+      <div>
+        <div class="gform-wrap">
+          <iframe 
+            src="https://docs.google.com/forms/d/e/1FAIpQLSfOHoLBPgr9R0xkeW-x0rW-HjfgeIGFMMOhXEpOilM7oywe3A/viewform?embedded=true" 
+            width="100%" 
+            height="1421" 
+            frameborder="0" 
+            marginheight="0" 
+            marginwidth="0"
+            style="border-radius:6px; display:block;">
+            Loading…
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span>© 2026 Ernesto Reyes · Los Angeles, CA</span>
+  <span>
+    <a href="/cdn-cgi/l/email-protection#d8bdaab6bdabacb798bdaab6bdabacb7aabda1bdabf6bbb7b5"><span class="__cf_email__" data-cfemail="9ffaedf1faecebf0dffaedf1faecebf0edfae6faecb1fcf0f2">[email&#160;protected]</span></a>
+    &nbsp;·&nbsp;
+    <a href="tel:5624453505">562-445-3505</a>
+  </span>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  // Scroll animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 80);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
