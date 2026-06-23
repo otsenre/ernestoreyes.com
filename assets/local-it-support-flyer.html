@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ernesto Reyes IT Support Flyer</title>
+  <style>
+    @page { size: Letter; margin: 0.35in; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #ffffff;
+      color: #0d1b2a;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.35;
+    }
+    .page {
+      min-height: 10.3in;
+      border: 3px solid #0d1b2a;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      position: relative;
+      overflow: hidden;
+    }
+    .top-band {
+      background: #0d1b2a;
+      color: #f5f0e8;
+      padding: 0.34in 0.42in 0.28in;
+      display: grid;
+      grid-template-columns: 0.9in 1fr;
+      gap: 0.22in;
+      align-items: center;
+    }
+    .logo {
+      width: 0.82in;
+      height: 0.82in;
+      border-radius: 0.12in;
+    }
+    .eyebrow {
+      color: #e8a020;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2.4px;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    h1 {
+      margin: 0;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 42px;
+      line-height: 0.96;
+      letter-spacing: -0.5px;
+    }
+    .subtitle {
+      margin-top: 9px;
+      color: #d8d2c8;
+      font-size: 15px;
+      max-width: 6.2in;
+    }
+    .content {
+      padding: 0.34in 0.42in 0.24in;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 0.34in;
+    }
+    h2 {
+      margin: 0 0 0.16in;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 29px;
+      color: #0d1b2a;
+    }
+    .body-copy {
+      font-size: 15px;
+      color: #26384e;
+      margin: 0 0 0.2in;
+    }
+    .services {
+      display: grid;
+      gap: 0.11in;
+      margin: 0.22in 0;
+      padding: 0;
+      list-style: none;
+    }
+    .services li {
+      border-left: 5px solid #e8a020;
+      padding: 0.06in 0 0.06in 0.13in;
+      font-size: 15px;
+      font-weight: 700;
+      color: #0d1b2a;
+    }
+    .proof {
+      margin-top: 0.22in;
+      background: #f5f0e8;
+      border: 1px solid #e6dccf;
+      padding: 0.16in;
+      font-size: 13.5px;
+      color: #26384e;
+    }
+    .proof strong { color: #0d1b2a; }
+    .qr-card {
+      border: 2px solid #e8a020;
+      border-radius: 10px;
+      padding: 0.2in;
+      text-align: center;
+      align-self: start;
+    }
+    .qr-card h3 {
+      margin: 0 0 0.1in;
+      font-size: 20px;
+      color: #0d1b2a;
+    }
+    .qr {
+      width: 2.35in;
+      height: 2.35in;
+      margin: 0.06in auto 0.14in;
+      display: block;
+    }
+    .qr-note {
+      font-size: 13px;
+      color: #26384e;
+      margin: 0;
+    }
+    .contact {
+      margin-top: 0.2in;
+      display: grid;
+      gap: 0.06in;
+      font-size: 15px;
+      font-weight: 700;
+      color: #0d1b2a;
+    }
+    .footer {
+      border-top: 1px dashed #8a9ab0;
+      padding: 0.12in 0.34in 0.16in;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0.08in;
+    }
+    .tab {
+      border: 1px solid #cfd6df;
+      border-radius: 6px;
+      text-align: center;
+      padding: 0.07in 0.04in;
+      font-size: 10.5px;
+      color: #0d1b2a;
+    }
+    .tab strong { display: block; color: #9a6715; font-size: 11px; }
+    @media print {
+      body { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="top-band">
+      <img class="logo" src="er-monogram.svg" alt="Ernesto Reyes IT Solutions logo" />
+      <div>
+        <div class="eyebrow">Los Angeles small-business IT support</div>
+        <h1>Need someone to make the tech work?</h1>
+        <p class="subtitle">Practical help with networks, workstations, databases, QuickBooks, phones, Google Workspace, Microsoft 365, and the everyday systems your business depends on.</p>
+      </div>
+    </section>
+
+    <section class="content">
+      <div>
+        <h2>Ernesto Reyes IT Solutions</h2>
+        <p class="body-copy">I help small businesses figure out what is broken, what needs setup, and what can be made more reliable without turning every problem into a big-company IT project.</p>
+        <ul class="services">
+          <li>Network setup, Wi-Fi, VPNs, remote access</li>
+          <li>MS Access, SQL, MySQL, MariaDB, legacy databases</li>
+          <li>QuickBooks, Sage/Peachtree, reports, backups</li>
+          <li>Windows workstations, printers, users, Active Directory</li>
+          <li>VoIP/PBX phones, Google Workspace, Microsoft 365</li>
+        </ul>
+        <div class="proof"><strong>32+ years hands-on IT experience.</strong> Former sole IT resource for a multi-building manufacturing company. Local, practical, and used to the real problems small businesses actually have.</div>
+      </div>
+
+      <aside class="qr-card">
+        <h3>Start here</h3>
+        <img class="qr" src="contact-qr.svg" alt="QR code to Ernesto Reyes contact page" />
+        <p class="qr-note">Scan to send a short note about what you need help with. I review the issue first, then reply or schedule a call.</p>
+        <div class="contact">
+          <div>ernestoreyes.com</div>
+          <div>ernesto@ernestoreyes.com</div>
+          <div>562-445-3505</div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="footer" aria-label="tear-off contact tabs">
+      <div class="tab"><strong>IT Help</strong>ernestoreyes.com<br />562-445-3505</div>
+      <div class="tab"><strong>IT Help</strong>ernestoreyes.com<br />562-445-3505</div>
+      <div class="tab"><strong>IT Help</strong>ernestoreyes.com<br />562-445-3505</div>
+      <div class="tab"><strong>IT Help</strong>ernestoreyes.com<br />562-445-3505</div>
+      <div class="tab"><strong>IT Help</strong>ernestoreyes.com<br />562-445-3505</div>
+    </section>
+  </main>
+</body>
+</html>
