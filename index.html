@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ernesto Reyes — IT Support for Small Businesses</title>
   <meta name="description" content="32+ years of hands-on IT experience helping small businesses in Los Angeles stay running. Network setup, databases, QuickBooks, troubleshooting and more."/>
+  <meta property="og:title" content="Ernesto Reyes — IT Support for Small Businesses"/>
+  <meta property="og:description" content="Reliable small-business IT support in Los Angeles from someone who has kept real companies running for decades."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://ernestoreyes.com/"/>
+  <link rel="icon" type="image/svg+xml" href="assets/er-monogram.svg"/>
   <!-- Google Analytics 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-7BMCN3Q6BC"></script>
   <script>
@@ -50,12 +55,22 @@
       border-bottom: 1px solid rgba(232,160,32,0.15);
     }
     .nav-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
       font-family: 'DM Serif Display', serif;
       font-size: 1.2rem;
-      color: var(--amber);
+      color: var(--cream);
       text-decoration: none;
       letter-spacing: 0.02em;
     }
+    .nav-logo-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      flex: 0 0 auto;
+    }
+    .nav-logo span { color: var(--amber); }
     .nav-links { display: flex; gap: 2rem; list-style: none; }
     .nav-links a {
       color: var(--muted);
@@ -137,12 +152,16 @@
       border-radius: 3px;
       transition: background 0.2s, transform 0.15s;
     }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
     .btn:hover { background: var(--amber2); transform: translateY(-1px); }
     .btn-ghost {
       background: transparent;
       color: var(--cream);
       border: 1px solid rgba(245,240,232,0.25);
-      margin-left: 1rem;
     }
     .btn-ghost:hover { border-color: var(--amber); color: var(--amber); background: transparent; transform: translateY(-1px); }
 
@@ -402,6 +421,7 @@
       .nav-links { gap: 1.2rem; }
       .hero { padding: 7rem 1.5rem 4rem; }
       .hero-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .hero-actions { align-items: stretch; }
       .form-row { grid-template-columns: 1fr; }
       section { padding: 4rem 1.5rem; }
       footer { flex-direction: column; gap: 0.5rem; text-align: center; }
@@ -412,7 +432,7 @@
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="nav-logo">Ernesto Reyes</a>
+  <a href="#" class="nav-logo" aria-label="Ernesto Reyes home"><img class="nav-logo-mark" src="assets/er-monogram.svg" alt=""/> <span>Ernesto Reyes</span></a>
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
     <li><a href="#about">About</a></li>
@@ -429,8 +449,10 @@
       <p class="hero-sub">
         32 years keeping small manufacturing and service businesses on their feet — networks, databases, software, phones. No jargon, no nonsense.
       </p>
-      <a href="#contact" class="btn">Get in Touch</a>
-      <a href="#services" class="btn btn-ghost">See What I Do</a>
+      <div class="hero-actions">
+        <a href="#contact" class="btn">Get in Touch</a>
+        <a href="#services" class="btn btn-ghost">See What I Do</a>
+      </div>
     </div>
 
     <div class="hero-stats">
@@ -572,7 +594,7 @@
         </p>
         <div class="contact-detail">
           <span>📧</span>
-          <span><a href="/cdn-cgi/l/email-protection#3154435f5442455e7154435f5442455e43544854421f525e5c"><span class="__cf_email__" data-cfemail="c4a1b6aaa1b7b0ab84a1b6aaa1b7b0abb6a1bda1b7eaa7aba9">[email&#160;protected]</span></a></span>
+          <span><a href="mailto:ernesto@ernestoreyes.com">ernesto@ernestoreyes.com</a></span>
         </div>
         <div class="contact-detail">
           <span>📞</span>
@@ -582,17 +604,23 @@
           <span>📍</span>
           <span>Los Angeles, CA — On-site & Remote</span>
         </div>
+        <div class="contact-detail">
+          <span>★</span>
+          <span><a href="https://share.google/jtsKKFSOxdFpURQdo" target="_blank" rel="noopener">Google Business Profile</a></span>
+        </div>
       </div>
 
       <div>
         <div class="gform-wrap">
           <iframe 
             src="https://docs.google.com/forms/d/e/1FAIpQLSfOHoLBPgr9R0xkeW-x0rW-HjfgeIGFMMOhXEpOilM7oywe3A/viewform?embedded=true" 
+            title="Contact Ernesto Reyes"
             width="100%" 
             height="1421" 
             frameborder="0" 
             marginheight="0" 
             marginwidth="0"
+            loading="lazy"
             style="border-radius:6px; display:block;">
             Loading…
           </iframe>
@@ -606,13 +634,15 @@
 <footer>
   <span>© 2026 Ernesto Reyes · Los Angeles, CA</span>
   <span>
-    <a href="/cdn-cgi/l/email-protection#d8bdaab6bdabacb798bdaab6bdabacb7aabda1bdabf6bbb7b5"><span class="__cf_email__" data-cfemail="9ffaedf1faecebf0dffaedf1faecebf0edfae6faecb1fcf0f2">[email&#160;protected]</span></a>
+    <a href="mailto:ernesto@ernestoreyes.com">ernesto@ernestoreyes.com</a>
+    &nbsp;·&nbsp;
+    <a href="https://share.google/jtsKKFSOxdFpURQdo" target="_blank" rel="noopener">Google Business</a>
     &nbsp;·&nbsp;
     <a href="tel:5624453505">562-445-3505</a>
   </span>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   // Scroll animations
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((e, i) => {
@@ -623,3 +653,6 @@
   }, { threshold: 0.1 });
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
+</script>
+</body>
+</html>

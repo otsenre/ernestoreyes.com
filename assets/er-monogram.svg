@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Ernesto Reyes ER monogram</title>
+  <desc id="desc">A clean navy and amber ER monogram for Ernesto Reyes IT support branding.</desc>
+  <rect width="512" height="512" rx="88" fill="#0d1b2a"/>
+  <rect x="32" y="32" width="448" height="448" rx="64" fill="none" stroke="#e8a020" stroke-width="12"/>
+  <path d="M142 352V160h142v34h-101v45h92v33h-92v46h105v34H142Z" fill="#f5f0e8"/>
+  <path d="M306 352V160h78c22 0 39 5 52 16 13 11 19 26 19 46 0 14-3 25-10 35-7 10-17 17-30 21l48 74h-48l-42-67h-27v67h-40Zm40-100h35c11 0 19-3 25-8 6-5 9-13 9-23 0-9-3-16-9-21-6-5-14-8-25-8h-35v60Z" fill="#e8a020"/>
+  <path d="M121 390h270" stroke="#e8a020" stroke-width="10" stroke-linecap="round"/>
+</svg>
