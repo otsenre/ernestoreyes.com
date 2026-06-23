@@ -403,6 +403,53 @@
       border-radius: 6px;
       overflow: hidden;
     }
+    .inquiry-card {
+      background: var(--navy);
+      border: 1px solid rgba(232,160,32,0.15);
+      border-radius: 8px;
+      padding: 2rem;
+    }
+    .inquiry-card h3 {
+      font-family: 'DM Serif Display', serif;
+      color: var(--white);
+      font-size: 1.35rem;
+      margin-bottom: 0.75rem;
+    }
+    .inquiry-card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.4rem;
+    }
+    .inquiry-list {
+      list-style: none;
+      display: grid;
+      gap: 0.75rem;
+      margin-bottom: 1.6rem;
+    }
+    .inquiry-list li {
+      color: var(--cream);
+      font-size: 0.92rem;
+      padding-left: 1.25rem;
+      position: relative;
+    }
+    .inquiry-list li::before {
+      content: '•';
+      color: var(--amber);
+      position: absolute;
+      left: 0;
+    }
+    .inquiry-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1rem;
+    }
+    .inquiry-link {
+      color: var(--muted);
+      font-size: 0.86rem;
+      text-decoration: none;
+    }
+    .inquiry-link:hover { color: var(--amber); }
 
     /* ── ANIMATIONS ── */
     .fade-up {
@@ -610,20 +657,20 @@
         </div>
       </div>
 
-      <div>
-        <div class="gform-wrap">
-          <iframe 
-            src="https://docs.google.com/forms/d/e/1FAIpQLSfOHoLBPgr9R0xkeW-x0rW-HjfgeIGFMMOhXEpOilM7oywe3A/viewform?embedded=true" 
-            title="Contact Ernesto Reyes"
-            width="100%" 
-            height="1421" 
-            frameborder="0" 
-            marginheight="0" 
-            marginwidth="0"
-            loading="lazy"
-            style="border-radius:6px; display:block;">
-            Loading…
-          </iframe>
+      <div class="inquiry-card">
+        <h3>Start with a short note</h3>
+        <p>
+          Send the basics first. I can usually tell pretty quickly whether I can help, what the next step should be, and whether a call makes sense.
+        </p>
+        <ul class="inquiry-list">
+          <li>Business name and city</li>
+          <li>What is broken, slow, confusing, or due for setup</li>
+          <li>How urgent it is</li>
+          <li>Best way and time to reply</li>
+        </ul>
+        <div class="inquiry-actions">
+          <a class="btn" href="mailto:ernesto@ernestoreyes.com?subject=IT%20support%20inquiry&amp;body=Business%20name%3A%0ACity%3A%0AWhat%20do%20you%20need%20help%20with%3A%0AHow%20urgent%20is%20it%3A%0ABest%20way%20and%20time%20to%20reply%3A%0A">Email Ernesto</a>
+          <a class="inquiry-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfOHoLBPgr9R0xkeW-x0rW-HjfgeIGFMMOhXEpOilM7oywe3A/viewform" target="_blank" rel="noopener">Use the Google Form instead</a>
         </div>
       </div>
     </div>
